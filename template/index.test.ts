@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'bun:test'
-import { day01 } from './index.ts'
+import { TEMPLATE } from './index.ts'
 
-describe('Bun Tests Examples', () => {
-  test('Part 1', () => {
-    expect(day01.part1()).toBe(1379)
+describe('Tests TEMPLATE', () => {
+  test.todo('Part 1', () => {
+    expect(TEMPLATE.part1()).toBe(1379)
   })
-  test('Part 2', () => {
-    expect(day01.part2()).toBe(56154)
+  test.todo('Part 2', () => {
+    expect(TEMPLATE.part2()).toBe(56154)
   })
 })
