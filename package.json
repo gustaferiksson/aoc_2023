@@ -1,0 +1,7 @@
+{
+	"name": "typescript-bun",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "^1.3.1"
+	}
+}
