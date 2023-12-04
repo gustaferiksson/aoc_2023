@@ -21,27 +21,27 @@ const input = {
     return this.parse<Number>(/\d+/g)
   },
   get symbols() {
-    return this.parse<Number>(/[^\d.]/g)
+    return this.parse<Symbol>(/[^\d.]/g)
   },
 }
 
 const add = (a: number, b: number) => a + b
 const mul = (a: number, b: number) => a * b
 
-const neighour = (number: Number) => (symbol: Symbol) =>
+const neighbour = (number: Number) => (symbol: Symbol) =>
   symbol.x >= number.x - 1 && symbol.x <= number.x + number.value.length && symbol.y >= number.y - 1 && symbol.y <= number.y + 1
 
 export const day03 = {
   part1: () =>
     input.numbers
-      .filter((n) => input.symbols.some(neighour(n)))
+      .filter((n) => input.symbols.some(neighbour(n)))
       .map((n) => +n.value)
       .reduce(add),
 
   part2: () =>
     input.symbols
       .filter((s) => s.value === '*')
-      .map((gear) => input.numbers.filter((n) => neighour(n)(gear)))
+      .map((gear) => input.numbers.filter((n) => neighbour(n)(gear)))
       .filter((n) => n.length === 2)
       .map((l) => l.map((n) => +n.value))
       .map((l) => l.reduce(mul))
