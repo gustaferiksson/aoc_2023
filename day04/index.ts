@@ -16,10 +16,7 @@ export const day04 = {
   // 13
   part1: () =>
     input.cards
-      .filter((n) => {
-        console.log()
-        return n > 0
-      })
+      .filter((n) => n > 0)
       .map((x) => 2 ** (x - 1))
       .reduce(add, 0),
   // 30
